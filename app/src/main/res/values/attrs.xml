@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--1-->
+    <declare-styleable name="HKButton">
+        <!--2-->
+        <attr name="backgroundColor" format="color" />
+        <attr name="backgroundAlpha" format="float" />
+        <attr name="isBorder" format="boolean" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderStroke" format="integer" />
+        <attr name="borderAlpha" format="float" />
+        <attr name="isIcon" format="boolean" />
+        <attr name="iconPosition" format="enum">
+            <enum name="right" value="1" />
+            <enum name="left" value="0" />
+        </attr>
+        <attr name="shadowColor" format="color" />
+    </declare-styleable>
+</resources>
