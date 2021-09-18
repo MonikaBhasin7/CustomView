@@ -3,17 +3,19 @@
     <!--1-->
     <declare-styleable name="HKButton">
         <!--2-->
+        <attr name="text" format="string" />
         <attr name="backgroundColor" format="color" />
         <attr name="backgroundAlpha" format="float" />
         <attr name="isBorder" format="boolean" />
         <attr name="borderColor" format="color" />
         <attr name="borderStroke" format="integer" />
-        <attr name="borderAlpha" format="float" />
         <attr name="isIcon" format="boolean" />
+        <attr name="rippleColor" format="color" />
         <attr name="iconPosition" format="enum">
             <enum name="right" value="1" />
             <enum name="left" value="0" />
         </attr>
         <attr name="shadowColor" format="color" />
+        <attr name="iconDrawable" format="integer" />
     </declare-styleable>
 </resources>

@@ -15,8 +15,15 @@
     <com.hk.customview.HKButton
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:backgroundColor="@color/teal_700"
+        app:backgroundColor="@color/teal_200"
+        app:text="Hare.Krsna"
+        app:borderColor="@color/cardview_light_background"
+        app:borderStroke="10"
+        app:rippleColor="@color/teal_200"
+        app:isBorder="true"
         android:layout_width="wrap_content"
+        app:isIcon="true"
+        app:iconDrawable="@drawable/ic_baseline_moving_24"
         android:layout_height="wrap_content" />
 
 
