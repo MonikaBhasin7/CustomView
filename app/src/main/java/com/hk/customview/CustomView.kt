@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
+import android.view.View.MeasureSpec
 import androidx.core.content.ContextCompat
 
 class CustomView(context: Context, attrs: AttributeSet): View(context,attrs) {
@@ -67,5 +68,58 @@ class CustomView(context: Context, attrs: AttributeSet): View(context,attrs) {
             style = Paint.Style.STROKE
         }
         canvas?.drawCircle(centerOfX,centerOfY,radiusOfCircleView,paint)
+    }
+
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        val desiredWidth = 1500
+        val desiredHeight = 1500
+        val widthMode = MeasureSpec.getMode(widthMeasureSpec)
+        val widthSize = MeasureSpec.getSize(widthMeasureSpec)
+        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+        val heightSize = MeasureSpec.getSize(heightMeasureSpec)
+
+        println("widthMode - $widthMode")
+        println("widthSize - $widthSize")
+        println("heightMode - $heightMode")
+        println("heightSize - $widthMode")
+
+        val width: Int
+        val height: Int
+
+        //Measure Width
+        width = when (widthMode) {
+            MeasureSpec.EXACTLY -> {
+                //Must be this size
+                widthSize
+            }
+            MeasureSpec.AT_MOST -> {
+                //Can't be bigger than...
+                Math.min(desiredWidth, widthSize)
+            }
+            else -> {
+                //Be whatever you want
+                desiredWidth
+            }
+        }
+
+        /* Measure Height */
+        height = when (heightMode) {
+            MeasureSpec.EXACTLY -> {
+                //Must be this size
+                heightSize
+            }
+            MeasureSpec.AT_MOST -> {
+                //Can't be bigger than...
+                Math.min(desiredHeight, heightSize)
+            }
+            else -> {
+                //Be whatever you want
+                desiredHeight
+            }
+        }
+
+        //MUST CALL THIS
+        setMeasuredDimension(width, height)
     }
 }
